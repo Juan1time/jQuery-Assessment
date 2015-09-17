@@ -7,7 +7,7 @@ console.log("Generate Button Chalenge");
  
 $(document).ready(function() {
 
-var counter = 0;
+var counter = 1;
 
 $("#generate").on("click", function(event){
 	event.preventDefault;
@@ -21,31 +21,29 @@ $("#generate").on("click", function(event){
 		counter++;
 
 
-
 var $removeBtn = $("<button> Remove </button>");
 	$div.append($removeBtn);
+
+
+	$removeBtn.on("click", function(event){
+	event.preventDefault;
+	$(this).parent().remove();
+})
 
 
 var $colorBtn = $("<button> Change Color </button>");
 	$div.append($colorBtn);
 
 
-})
+	$colorBtn.on('click', function(){
+ 	$(this).parent().addClass(".blue");
+ 	$(this).parent().toggleClass(".purple");
+ 	// $(this).parent().toggle();
 });
+ 	
+	});
 
-	$removeBtn.on("click"), function(event){
-	event.preventDefault;
-	$(this).parent().remove();
-	console.log(this);
-
-
-	$colorBtn.on('click', function(event){
- 	event.preventDefault;
- 	$(this).parent().toggle();
-
- 	});
-
-};
+		});
 
 
 // In your HTML, include a ‘generate’ button, that when clicked, 
